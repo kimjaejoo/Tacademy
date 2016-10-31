@@ -1,0 +1,27 @@
+package com.model;
+
+import java.util.ArrayList;
+
+public class ReqBody {
+
+	int head;
+	ArrayList<String> body;
+	public int getHead() {
+		return head;
+	}
+	public void setHead(int head) {
+		this.head = head;
+	}
+	public ArrayList<String> getBody() {
+		return body;
+	}
+	public void setBody(ArrayList<String> body) {
+		this.body = body;
+	}
+	
+	
+	
+
+	
+	
+}

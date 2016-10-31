@@ -1,0 +1,11 @@
+package com.model;
+
+public class ReqBody {
+
+	int head;
+	String[] body;
+	
+
+	
+	
+}

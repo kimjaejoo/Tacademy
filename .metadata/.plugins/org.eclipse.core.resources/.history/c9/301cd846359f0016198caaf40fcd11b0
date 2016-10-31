@@ -1,0 +1,72 @@
+package com.taca;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+// servlet을 드럽게 쉽게 만든다....
+
+@WebServlet(description = "db연동 테스트", urlPatterns = { "/DBtest" })
+public class DBtest extends HttpServlet {
+
+	Connection conn;
+
+	private static final long serialVersionUID = 1L;
+
+	public DBtest() {
+		super();
+		System.out.println("생성자");
+
+	}
+
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init => db연결하기");
+		try {
+
+			// 1. 드라이버 로드
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			// 2. connection
+			try {
+				conn = DriverManager.getConnection("jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/tacademy?" + "user=minty&password=greatsqldb");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public void destroy() {
+		System.out.println("destroy => db해제하기");
+	}
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("service");
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("doGET => 쿼리 수행");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("doPOST");
+		doGet(request, response);
+	}
+
+}
