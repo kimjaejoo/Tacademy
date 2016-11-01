@@ -1,0 +1,50 @@
+package com.taca;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet(name = "version", description = "버전체크 모델2 방식", urlPatterns = { "/version" })
+public class VersionEx extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	Connection conn;
+   
+    public VersionEx() {
+        super();
+        String url = "jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy?user=test&password=test1234";
+        Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection(url);
+    }
+
+	
+	public void init(ServletConfig config) throws ServletException {
+		
+	}
+
+	
+	public void destroy() {
+		
+	}
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}

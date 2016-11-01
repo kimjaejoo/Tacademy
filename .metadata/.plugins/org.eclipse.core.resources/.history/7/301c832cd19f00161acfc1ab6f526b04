@@ -1,0 +1,12 @@
+<%@page import="java.util.Date,java.util.Calendar "%>
+<!-- import를 나열할때는 ,로 하고 나열한다. -->
+
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" %>
+
+
+<%
+	Date d = new Date();
+	Calendar c = Calendar.getInstance();
+%>
+<%=c.get(Calendar.DAY_OF_MONTH) %>

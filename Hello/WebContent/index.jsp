@@ -8,9 +8,10 @@
 </head>
 <body>
 
+
 	<h3>GET/POST test</h3>
 	<fieldset>
-		<form action="/Hello/DBtest" method="post">
+		<form action="/Hello/DBTest01" method="post">
 			<input type="text" name="uid" placeholder = "아이디" required/> <br />
 			 <!-- required 를 넣어주면 빈칸일 경우 넘어가지 않는다. -->
 			<input type="password" name="upw" id="" placeholder = "비밀번호" required/> <br />

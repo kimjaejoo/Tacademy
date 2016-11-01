@@ -32,13 +32,15 @@ public class DBtest extends HttpServlet {
 			// 1. 드라이버 로드
 			Class.forName("com.mysql.jdbc.Driver");
 			// 2. 커넥션
-			conn = DriverManager.getConnection("jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy?"
-					+ "user=test&password=test1234");
+			conn = DriverManager.getConnection("jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy?" +
+                    "user=test&password=test1234");
 			System.out.println("DB 연결 성공");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			System.out.println("여기가 뜨면 안됨");
 		} catch (SQLException e) {
 			e.printStackTrace();
+			System.out.println("뭔가 잘못됨");
 		}
 	}
 
@@ -62,7 +64,7 @@ public class DBtest extends HttpServlet {
 		System.out.println("doGet() -> 쿼리 수행");
 
 		int memberCnt = 0;
-		String sql = "select count(memIdx) as cnt from tbl_User where uid= ? and upw=? ;";
+		String sql = "select count(memIdx) as cnt from tbl_User where uid= ? and upw= ? ;";
 		// 커넥션객체 => statement 획득
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);

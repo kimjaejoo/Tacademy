@@ -1,0 +1,116 @@
+package com.taca;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import com.model.ResError;
+import com.model.ResVersion;
+import com.model.VersionVO;
+
+
+@WebServlet(name = "version", description = "버전체크 모델2 방식", urlPatterns = { "/version" })
+public class VersionEx extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	Connection conn;
+   
+    public VersionEx() {
+        super();
+       
+    }
+
+	
+	public void init(ServletConfig config) throws ServletException {
+		 String url = "jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy?user=test&password=test1234";
+	        try {
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager.getConnection(url);
+				System.out.println("DB연결 성공");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("문제있음");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("DB연결 실패");
+			}
+	}
+
+	
+	public void destroy() {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("");
+		
+		doGet(request, response);
+		
+		String os = request.getParameter("os");
+		if( os == null || os.trim().length()==0 ){
+			// 에러 ResError :	{ "code":-1, "msg":"매개변수가 누락되었습니다." }
+			ResError err = new ResError(-1, "매개변수가 누락되었습니다.");
+			// 객채 -> json으로 
+			Gson gson 	= new Gson();
+			String json = gson.toJson(err);
+			response.getWriter().append(json);
+			return;
+		}
+		try{		
+			// 3. 쿼리
+			String sql 						= "select * from tbl_version where os=? limit 1;";
+			PreparedStatement ps 	= conn.prepareStatement(sql);
+			ps.setString(1, os);
+			ResultSet rs 					= ps.executeQuery();
+			VersionVO version 		= null;
+			while( rs.next() ){
+				System.out.println( rs.toString() );
+				version = new VersionVO(	rs.getString("os"),
+																	rs.getString("version"),
+																	rs.getString("url")       );
+			}
+			if( rs != null )
+				rs.close();
+			// 5. 응답
+			ResVersion res = new ResVersion();
+			res.setCode(1);
+			res.setMsg(version);
+			Gson gson 	= new Gson();
+			String json = gson.toJson(res);
+			response.getWriter().append(json);
+			// { "code":1, "msg":{"os":"a", "version":"1.0.0", "url":"http://m.daum.net"} }
+		}catch(Exception e){
+			
+		}
+		
+	}
+
+}
