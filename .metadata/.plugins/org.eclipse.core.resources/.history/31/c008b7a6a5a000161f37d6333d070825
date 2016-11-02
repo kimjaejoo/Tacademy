@@ -1,0 +1,30 @@
+package com.taca;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet(name = "cookieProc", description = "쿠키값을 변경한다", urlPatterns = { "/cookieProc" })
+public class CookieProc extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+    public CookieProc() {
+        super();
+        
+    }
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 요청한 값을 획득하여 쿠키를 변경하고 돌아간다.
+		response.addCookie(new Cookie("uid",request.getParameter("uid")));
+		response.addCookie(new Cookie("upw",request.getParameter("upw")));
+		request.getRequestDispatcher("cookie_test2.jsp").forward(request, response);;
+	}
+
+}

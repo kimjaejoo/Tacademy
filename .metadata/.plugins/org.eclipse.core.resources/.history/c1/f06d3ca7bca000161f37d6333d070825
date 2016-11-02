@@ -1,0 +1,5 @@
+package com.model;
+
+public class ReqRegistDto {
+	String uid, name, upw, regdate, uuid, token, phone, model, os;
+}

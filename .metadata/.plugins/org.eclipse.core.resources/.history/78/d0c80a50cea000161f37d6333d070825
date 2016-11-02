@@ -1,0 +1,131 @@
+package com.taca;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import com.model.ReqRegistDto;
+import com.model.ResRegistDto;
+import com.model.UserDao;
+
+@WebServlet(name = "regist", description = "회원가입", urlPatterns = { "/regist" })
+public class Regist extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	Connection conn = null;
+	int nRtn = 0;
+	
+	public Regist() {
+		super();
+
+	}
+	
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init() -> DB 연결");
+
+		try {
+			// 1. 드라이버 로드
+			Class.forName("com.mysql.jdbc.Driver");
+			// 2. 커넥션
+			conn = DriverManager.getConnection("jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy?" +
+                    "user=test&password=test1234");
+			System.out.println("DB 연결 성공");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("여기가 뜨면 안됨");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("뭔가 잘못됨");
+		}
+	}
+
+	public void destroy() {
+		System.out.println("destroy() -> DB 해제");
+		try {
+			conn.close();
+			System.out.println("DB 연결 종료");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		doPost(req, resp);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// 요청
+		String json = 
+				"{\"head\" : \"RG\","
+				+ "\"body\" : "
+				+ "{	\"uid\" : \"ppp\","
+				+ "\"name\" : \"홍길이\","
+				+ "\"upw\" : \"123\","
+				+ "\"uuid\" : \"1345fdsaga\","
+				+ "\"token\" : \"213eugfda\","
+				+ "\"phone\" : \"01012345678\","
+				+ "\"model\" : \"shs929\","
+				+ "\"os\" : \"a\"}}";
+		Gson gson = new Gson();
+		ReqRegistDto reqD = gson.fromJson(json, ReqRegistDto.class);
+		// 비즈니스
+		
+		
+		String sql = "INSERT INTO tbl_User "
+				+ "(`uid`,`name`,`upw`,`regdate`,`uuid`,`token`,`phone`,`model`,`os`) "
+				+ "VALUES (?,?,?,'now()',?,?,?,?,?) ";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			// 파라미테 셋팅
+			pstmt.setString(1, reqD.getBody().getUid());
+			pstmt.setString(2, reqD.getBody().getName());
+			pstmt.setString(3, reqD.getBody().getUpw());
+			pstmt.setString(4, reqD.getBody().getUuid());
+			pstmt.setString(5, reqD.getBody().getToken());
+			pstmt.setString(6, reqD.getBody().getPhone());
+			pstmt.setString(7, reqD.getBody().getModel());
+			pstmt.setString(8, reqD.getBody().getOs());
+			
+			nRtn = pstmt.executeUpdate();
+			System.out.println(nRtn);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// 응답
+		ResRegistDto rrd = new ResRegistDto();
+		if(nRtn > 0){
+			
+		}
+		
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/plain;charset=utf-8");
+		response.setCharacterEncoding("utf-8");
+		Gson gson2 = new Gson();
+		rrd.setCode(1);
+		rrd.setMsg("회원가입이 완료되었습니다.");
+		UserDao user = new UserDao();
+		user.setUid(	reqD.getBody().getUid());
+		user.setName(	reqD.getBody().getName());
+		user.setUpw(	reqD.getBody().getUpw());
+		rrd.setData(user);
+		response.getWriter().println(gson2.toJson(rrd));
+
+	}
+
+}
