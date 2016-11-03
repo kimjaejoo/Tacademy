@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+
+response.sendRedirect("/Hello/searchForm.jsp");
+
+%>
 
 
 	<h3>GET/POST test</h3>

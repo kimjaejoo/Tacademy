@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	// 실습 => 2개의 입력창의 쿠키값을 읽어서 셋팅하기
 	// 단 , 쿠키값을 뽑는 멤버 메소드를 구성하여 데이터를 획득하고 expression으로 값세팅

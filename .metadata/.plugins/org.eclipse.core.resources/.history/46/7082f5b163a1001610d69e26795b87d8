@@ -1,0 +1,68 @@
+package com.taca;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(name = "login", description = "로그인처리", urlPatterns = { "/login" })
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       Connection conn;
+   
+    public Login() {
+        super();
+        
+    }
+
+	
+    public void init(ServletConfig config) throws ServletException {
+		System.out.println("init() -> DB 연결");
+		
+		try {
+			// 1. 드라이버 로드
+			Class.forName("com.mysql.jdbc.Driver");
+			// 2. 커넥션
+			conn = DriverManager.getConnection("jdbc:mysql://jsptest.cnsk7fdb6ed8.ap-northeast-2.rds.amazonaws.com:3306/taca?" +
+				                               "user=test&password=12341234");
+			System.out.println("DB 연결 성공");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void destroy() {
+		System.out.println("destroy() -> DB 해제");
+		try {
+			conn.close();
+			System.out.println("DB 연결 종료");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}

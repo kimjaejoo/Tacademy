@@ -33,8 +33,8 @@ public class Regist extends HttpServlet {
 			// 1. 드라이버 로드
 			Class.forName("com.mysql.jdbc.Driver");
 			// 2. 커넥션
-			conn = DriverManager.getConnection("jdbc:mysql://jsptest.cnsk7fdb6ed8.ap-northeast-2.rds.amazonaws.com:3306/taca?" +
-				                               "user=test&password=12341234");
+			conn = DriverManager.getConnection("jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy?" +
+				                               "user=test&password=test1234");
 			System.out.println("DB 연결 성공");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

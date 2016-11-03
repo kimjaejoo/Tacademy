@@ -1,0 +1,47 @@
+package com.taca;
+
+import java.io.IOException;
+import java.sql.Connection;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+@WebServlet(name = "pool", description = "디비풀테스트", urlPatterns = { "/pool" })
+public class DBPoolTest extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public DBPoolTest() {
+		super();
+
+	}
+	public Connection getConnection(){
+		try {
+			Context initCtx = new InitialContext();
+			Context envCtx = (Context)initCtx.lookup("java:comp/env");
+			DataSource ds = (DataSource)envCtx.lookup("jdbc/java");
+			return ds.getConnection();
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doGet(request, response);
+	}
+
+}
