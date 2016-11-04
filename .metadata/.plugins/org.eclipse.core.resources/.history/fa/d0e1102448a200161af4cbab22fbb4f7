@@ -1,0 +1,10 @@
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" errorPage="index.jsp"%>
+<!--errorPage="index.jsp" 페이지에 에러가 발생하면 index.jsp 로 자동으로 이동한다.  -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<!-- 시간포맷팅 -->
+<c:set var="date" value="<%= new Date(); %>"/>
+

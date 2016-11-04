@@ -25,10 +25,13 @@ public class Search extends HttpServlet {
     
     public Search() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
 		
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
@@ -55,8 +58,14 @@ public class Search extends HttpServlet {
 			System.out.println(ps);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				response.getWriter().println(rs.getString("name") + "<br>");
-				cStores.add(new CStore(rs.getInt("idx"), rs.getString("name"), rs.getString("addr")));
+				response.getWriter().println(
+						rs.getString("name") + "<br>");
+				cStores.add(
+						new CStore(
+								rs.getInt("idx"), 
+								rs.getString("name"), 
+								rs.getString("addr")
+									));
 			}
 			if (rs != null)
 				rs.close();

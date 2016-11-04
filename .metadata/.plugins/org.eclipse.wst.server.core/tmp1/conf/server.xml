@@ -146,6 +146,8 @@
 
       <Context docBase="C:\Users\Tacademy\Desktop\Tacademy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Tacademy\Desktop\Tacademy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Hello" path="/Hello" reloadable="true" source="org.eclipse.jst.jee.server:Hello">
 	<Resource auth="container" driverClassName="com.mysql.jdbc.Driver" factory="org.apache.commons.dbcp.BasicDataSourceFactory" maxActive="100" maxIdle="10" name="jdbc/java" password="test1234" type="javax.sql.DataSource" url="jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy" username="test"/>
+</Context><Context docBase="C:\Users\Tacademy\Desktop\Tacademy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\MyServer" path="/m" reloadable="true" source="org.eclipse.jst.jee.server:MyServer">
+	<Resource auth="container" driverClassName="com.mysql.jdbc.Driver" factory="org.apache.commons.dbcp.BasicDataSourceFactory" maxActive="100" maxIdle="10" name="jdbc/java" password="test1234" type="javax.sql.DataSource" url="jdbc:mysql://jsptest.cpkkponxntb7.ap-northeast-2.rds.amazonaws.com:3306/Tacademy" username="test"/>
 </Context></Host>
     </Engine>
   </Service>

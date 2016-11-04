@@ -1,0 +1,5 @@
+package com.mybean;
+
+public class LoginBean {
+
+}

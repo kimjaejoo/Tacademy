@@ -5,7 +5,33 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-11-02T22:46:20Z</updated>
+  <updated>2016-11-03T17:48:00Z</updated>
+  <entry>
+    <title>Spring Data release train Hopper SR5 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/03/spring-data-release-train-hopper-sr5-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Oliver Gierke</name>
+    </author>
+    <id>tag:spring.io,2016-11-03:2680</id>
+    <updated>2016-11-03T17:48:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Data team I am happy to announce the fifth service release of Spring Data Hopper. It contains variety of bug fixes and is a recommended upgrade for all users of this or any previous release train. The overall list of fixed tickets can be found &lt;a href="https://jira.spring.io/issues/?filter=15445"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 1.12.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/1.12.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.12.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.12.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.12.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 1.10.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/1.10.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.10.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.10.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.10.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 1.1.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/1.1.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/1.1.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/1.1.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/1.1.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 1.4.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/1.4.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.4.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.4.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.4.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 2.0.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/2.0.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/2.0.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/2.0.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/2.0.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 1.8.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/1.8.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.8.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.8.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.8.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 4.1.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/4.1.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/4.1.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/4.1.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/4.1.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 1.9.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/1.9.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.9.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.9.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.9.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 1.0.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/1.0.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/envers/docs/1.0.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/envers/docs/1.0.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 2.5.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/2.5.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.5.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.5.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.5.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 1.7.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/1.7.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.7.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.7.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.7.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 2.0.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/2.0.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/2.0.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/2.0.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/2.0.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 2.1.5 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/2.1.5.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/2.1.5.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/2.1.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/2.1.5.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Introducing the Spring Cloud CLI Launcher</title>
     <link rel="alternate" href="https://spring.io/blog/2016/11/02/introducing-the-spring-cloud-cli-launcher" />
@@ -946,97 +972,5 @@ history dragged along with you, don&amp;#8217;t you?&lt;/p&gt;
     <updated>2016-10-17T17:27:00Z</updated>
     <content type="html">&lt;p&gt;Speakers: Mark Pollack, Mark Fisher&lt;br/&gt;Spring Cloud Data Flow enables you to create data pipelines for many common use-cases such as data ingestion, real-time analytics and data import/export.&lt;br/&gt;In this webinar, we will introduce Spring Cloud Data Flow¡¯s architecture and walk through the orchestration capabilities of long-running and short-lived data-centric applications on multiple runtime platforms such as Cloud Foundry, Kubernetes, Apache Mesos and Apache YARN.&lt;br/&gt;Spring Cloud Data Flow represents the evolution of Spring XD and retains the DSL to define data pipelines as well as the web based UI designer, but changes the component model from modules that used to run inside a container to standard Spring Boot applications built with Spring Cloud Stream and Spring Cloud Task APIs.&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/eMK6ttCmkKE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Java DSL for Spring Integration 1.2 Release is available</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/10/14/java-dsl-for-spring-integration-1-2-release-is-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2016-10-14:2656</id>
-    <updated>2016-10-14T16:58:02Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It&amp;#8217;s my pleasure to announce that the Java DSL for Spring Integration &lt;code&gt;1.2 GA&lt;/code&gt; is now available.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The artifact &lt;code&gt;org.springframework.integration:spring-integration-java-dsl:1.2.0.RELEASE&lt;/code&gt; is available in the &lt;a href="http://repo.spring.io/release"&gt;Release repo&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cspring-integration-java-dsl"&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Since the previous &lt;a href="https://spring.io/blog/2016/09/27/java-dsl-for-spring-integration-1-2-release-candidate-1-is-available"&gt;Release Candidate 1&lt;/a&gt; we have received some feedback and these additional features have been added:&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="thread-barrier-support" class="sect0"&gt;&lt;a class="anchor" href="#thread-barrier-support"&gt;&lt;/a&gt;Thread Barrier support&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A new &lt;code&gt;.barrier()&lt;/code&gt; and its mirror &lt;code&gt;.trigger()&lt;/code&gt; EIP-methods have been added to the &lt;code&gt;IntegrationFlow&lt;/code&gt; definition:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;private static final String BARRIER = "barrier";
-
-@Bean
-public IntegrationFlow barrierFlow() {
-    return f -&amp;gt; f
-        .barrier(10000, b -&amp;gt; b
-                .correlationStrategy(
-                         new HeaderAttributeCorrelationStrategy(BARRIER))
-                 .outputProcessor(g -&amp;gt;
-                         g.getMessages()
-                                 .stream()
-                                 .skip(1)
-                                 .findFirst()
-                                 .get()))
-         .channel(c -&amp;gt; c.queue("barrierResults"));
-}
-
-@Bean
-public IntegrationFlow releaseBarrierFlow(
-                          MessageTriggerAction barrierTriggerAction) {
-    return IntegrationFlows.from((Channels c) -&amp;gt; c.queue("releaseChannel"))
-        .trigger(barrierTriggerAction,
-            e -&amp;gt; e.poller(p -&amp;gt; p.fixedDelay(100)))
-        .get();
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id="poller-code-errorchannel-code" class="sect0"&gt;&lt;a class="anchor" href="#poller-code-errorchannel-code"&gt;&lt;/a&gt;Poller &lt;code&gt;errorChannel&lt;/code&gt;&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A more convenient &lt;code&gt;PollerSpec.errorChannel(String)&lt;/code&gt; has been added after upgrading to Spring Integration &lt;code&gt;4.3.4&lt;/code&gt;.
-We can now specify just the bean name for the &lt;code&gt;errorChannel&lt;/code&gt; on the Poller definition and it will be resolved later when the first &lt;code&gt;ErrorMessage&lt;/code&gt; is sent.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="filesplitter-improvements" class="sect0"&gt;&lt;a class="anchor" href="#filesplitter-improvements"&gt;&lt;/a&gt;FileSplitter improvements&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;SplitterEndpointSpec&lt;/code&gt; now provides a &lt;code&gt;delimiters()&lt;/code&gt; option which is mapped to the &lt;code&gt;DefaultMessageSplitter.setDelimiters()&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can find all of the features introduced in version &lt;code&gt;1.2&lt;/code&gt; in the blog posts announcing previous Milestone releases:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://spring.io/blog/2016/07/08/java-dsl-for-spring-integration-1-2-m1-and-1-1-3-are-available"&gt;Milestone 1&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://spring.io/blog/2016/09/15/java-dsl-for-spring-integration-1-2-milestone-2-is-available"&gt;Milestone 2&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://spring.io/blog/2016/09/27/java-dsl-for-spring-integration-1-2-release-candidate-1-is-available"&gt;Release Candidate 1&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h1 id="next-steps" class="sect0"&gt;&lt;a class="anchor" href="#next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Spring Integration Java DSL project is moving to the &lt;a href="http://projects.spring.io/spring-integration/"&gt;Spring Integration Core&lt;/a&gt; &lt;code&gt;5.0&lt;/code&gt; and Java 8 code base.
-Version &lt;code&gt;1.2.x&lt;/code&gt; will remain in support for bug fixes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A big thanks to everyone from the community for feedback that has been provided.
-Without you we wouldn&amp;#8217;t have such a good comprehensive product!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-java-dsl"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/wiki/Spring-Integration-Java-DSL-Reference"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>

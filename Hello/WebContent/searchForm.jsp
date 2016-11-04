@@ -20,24 +20,25 @@
 
 </style>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(function(){
 		$("#searchBtn").on("click", function(){
 			console.log("지금 버튼을 누르고 있지롱");
 			//alert($("input[name=keyword])").val();
 			$.ajax({
-				url : "/Hello/search",
-				data : "keyword =" + $("#txt").val(),
-				dataType : "json",
+				url : "/Hello/search", // 전송방식을 생략하면 기본값으로 get방식이 들어간다.
+				data : "keyword =" + $("#txt").val(), // 아이디가 txt인 곳의 value값을 주소창에 넘긴다.
+				console.log($("#txt").val());
+				dataType : "json", // 전송하는 파일의 형태가 json파일이다.
 				success : function(json){
 					//alert(json.data[0].name);
-					$("tbody").empty();
+					$("tbody").empty(); // 이전에 검색한 내용을 비운다.
 					$.each(json.data, function(idx, item){
 					var html = "<tr>"+
 							   "<td>"+item.idx+"</td><td>"+item.name+"</td><td>"+item.addr+"</td>"+
 					 		   "</tr>";
-					$("tbody").append(html);
+					$("tbody").append(html); // html 태그안에 내용을 넣는다.
 					$("tbody>tr:last").on("click", function(){
-							alert(item.name);						
+							alert(item.name);		
 						});
 					});
 					//$("tbody>tr:odd").css();

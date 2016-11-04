@@ -1,0 +1,40 @@
+package com.taca;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.Sender;
+
+@WebServlet(name ="push", urlPatterns="/push", description = "안드로이드 fcm 메세지 발송")
+public class PushMessage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public PushMessage() {
+        super();
+
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 1. 발송기 객체 생성
+		Sender sender = new Sender("AIzaSyCn_nHGJP4Cgroh3jTZVSTVQTxN_ZFD-pk");
+		
+		// 2. 메세지 구성
+		Message message = new Message.Builder().addData("data", "hi 방가 123 !@#").build();
+		
+		// 3. 고객정보 (토큰) 획득
+		
+		// 4. 발송
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		doGet(request, response);
+	}
+
+}
