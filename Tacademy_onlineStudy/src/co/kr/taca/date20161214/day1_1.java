@@ -1,0 +1,11 @@
+package co.kr.taca.date20161214;
+
+// 다른 클래스의 method를 불러와 사용하는 방법입니다 
+@SuppressWarnings("static-access")
+public class day1_1 {
+	public static void main(String[] args) {
+		day1 d = new day1();
+		String date = d.dayOne();
+		System.out.println(date);
+	}
+}

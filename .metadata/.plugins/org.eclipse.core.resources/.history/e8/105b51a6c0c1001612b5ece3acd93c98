@@ -1,0 +1,46 @@
+package co.kr.taca.SpringFrameworkBasic;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class day1 {
+ // framework의 개념
+	/**
+	 * 1 . software의 재사용 방안
+	 *  1- 1. 복사 & 붙여넣기
+	 *  가장 기본적이고 초보적인 재사용방식 
+	 *  이방식은 JDK의 환경이 변화하면 코드를 모두 변경해야하는 불편한 점을 가지고 있다. 
+	 *  예제 코드)
+	 */
+	
+	public static void main(String[] args) {
+		SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+		String date = sdf.format(new Date());
+		System.out.println(date);
+		day1 d = new day1();
+		System.out.println(d.dayOne()); 
+		
+		
+		// 시간을 표시하는 기본적인 코드를 가지고 있다. 만약 이 코드를 똑같이 다른 클래스에서 사용하고 싶어 복사 & 붙여넣기로 사용한다면 JDK의 환경에따라 코드를 사용클래스 모두 수정해야한다.
+	}
+	
+	/**
+	 * 1- 2. method호출방법
+	 * 위의 단점을 어느정도 해결하고 코드를 하나의 method안에 작성, instance화 함으로서 사용한다
+	 * method의 structure와 return type이 변경되면 method를 사용하는 클래스 모두 적용된다.
+	 */
+	public String dayOne(){
+		GregorianCalendar date = new GregorianCalendar();
+		SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+		return sdf.format(date);
+	}
+	// method안의 내용이나 return type이 수정되어지면 사용되어진 클래스는 자동으로 변경된다.
+	
+	/**
+	 * 1- 3. 클래스의 상속관계를 이용한 method의 재사용이 가능하다.
+	 */
+	
+	
+	
+}

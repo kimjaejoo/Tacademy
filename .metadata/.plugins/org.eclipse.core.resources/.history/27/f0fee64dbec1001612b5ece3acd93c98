@@ -1,0 +1,8 @@
+package co.kr.taca.SpringFrameworkBasic;
+
+public class day1_1 {
+	public static void main(String[] args) {
+		day1 d = new day1();
+		String date = d.dayOne();
+	}
+}

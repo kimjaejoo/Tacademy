@@ -1,0 +1,60 @@
+package co.kr.taca.date20161214;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+@SuppressWarnings("static-access")
+public class day1 {
+	// framework의 개념
+	/**
+	 * 1 . software의 재사용 방안 1- 1. 복사 & 붙여넣기 가장 기본적이고 초보적인 재사용방식 이방식은 JDK의 환경이
+	 * 변화하면 코드를 모두 변경해야하는 불편한 점을 가지고 있다. 예제 코드)
+	 */
+
+	public static void main(String[] args) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+		String date = sdf.format(new Date());
+		System.out.println(date);
+		day1 d = new day1();
+		System.out.println(d.dayOne());
+
+		Calendar car = Calendar.getInstance(); // calendar class로 정확한 시간과 날짜를
+												// 구할수 있다.
+		System.out.println(car.getTime());
+		// 시간을 표시하는 기본적인 코드를 가지고 있다. 만약 이 코드를 똑같이 다른 클래스에서 사용하고 싶어 복사 & 붙여넣기로
+		// 사용한다면 JDK의 환경에따라 코드를 사용클래스 모두 수정해야한다.
+	}
+
+	/**
+	 * 1- 2. method호출방법 위의 단점을 어느정도 해결하고 코드를 하나의 method안에 작성, instance화 함으로서
+	 * 사용한다 method의 structure와 return type이 변경되면 method를 사용하는 클래스 모두 적용된다.
+	 */
+	public static String dayOne() {
+		Date date = Calendar.getInstance().getTime();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+		return sdf.format(date);
+	}
+	// method안의 내용이나 return type이 수정되어지면 사용되어진 클래스는 자동으로 변경된다.
+	// date와 simpleDateFormat의 사용으로 날자와 시간을 설정 불러오는 것이 가능하지만 date class를 쓰지않아도
+	// simpleDateFormat으로 사용이 가능함
+
+	/**
+	 * 1- 3. 클래스의 상속관계를 이용한 mehod의 재사용이 가능하다. 부모클래스를 상속받은 모든클래스는 자동적으로 dayOne
+	 * method를 사용하게 된다. day1 class의 method가 변경되더라도 dayOne() method의 인터페이스가 변하지
+	 * 않으면 나머지 클래스들은 영향을 받지 않는다.
+	 */
+
+	public static int sumOne(int a, int b) {
+		a = 13 + a; // 뒤의 a 가 있지 않으면 매개변수로 받은 값이 13으로 초기화가 되버리기 때문에 a의 변수안에 담아서
+					// 계산한다.
+		return a + b;
+	}
+
+	/**
+	 * 1- 4. AOP(Aspect Oriented Programming) 관심의 분리 (Seperatrion of Concerns)
+	 * AOPrk 핵심관심모듈의 코드를 직접 건드리지 않고 필요한 기능이 동작하도록 하는데는 위빙이라는 특수한 작업이 필요하다 즉,
+	 * AOP에서 위빙 작업을 통해 핵심모듈 사이사이에 필요한 횡단 관심 코드가 동작하도록 엮어지게 만든다.
+	 */
+
+}

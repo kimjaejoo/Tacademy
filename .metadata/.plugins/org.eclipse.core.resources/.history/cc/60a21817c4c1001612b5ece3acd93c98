@@ -1,0 +1,10 @@
+package co.kr.taca.SpringFrameworkBasic;
+
+public class day1_2 extends day1 {
+	public static void main(String[] args) {
+		System.out.println(dayOne());
+		System.out.println(sumOne(12 , 0));
+	}
+	
+	// static한 method를 가지고 있는 class를 상속받아 부모클래스의 메소드를 사용가능하게 만들어준다.
+}

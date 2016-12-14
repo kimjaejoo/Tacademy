@@ -1,0 +1,5 @@
+package co.kr.taca.SpringFrameworkBasic;
+
+public class day1_2 extends day1 {
+	
+}

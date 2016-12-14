@@ -1,0 +1,8 @@
+package co.kr.taca.SpringFrameworkBasic;
+
+public class day1_2 extends day1 {
+	String date = dayOne();
+	public static void main(String[] args) {
+		System.out.println(date);
+	}
+}
