@@ -1,6 +1,0 @@
-package com.model;
-
-public class ResRegistDto {
-	String head;
-	ReqRegistDto dto;
-}

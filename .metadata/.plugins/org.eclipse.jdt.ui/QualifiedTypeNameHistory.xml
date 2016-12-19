@@ -35,4 +35,10 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.model.CStore"/>
 <fullyQualifiedTypeName name="java.sql.Array"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="sun.util.calendar.Gregorian"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="co.kr.taca.SpringFrameworkBasic.day1"/>
 </qualifiedTypeNameHistroy>

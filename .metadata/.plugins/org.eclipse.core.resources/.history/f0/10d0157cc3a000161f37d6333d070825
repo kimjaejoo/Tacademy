@@ -1,6 +1,0 @@
-package com.model;
-
-// tbl_user 테이블의 1개의 row 데이터를 담는 그릇
-public class UserDao {
-	
-}
